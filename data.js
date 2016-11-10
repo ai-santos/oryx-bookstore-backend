@@ -1,4 +1,4 @@
-[ { title: 'Steal this computer book',
+const book_data = [ { title: 'Steal this computer book',
     subtitle: 'what they wont tell you about the internet',
     authors: [ 'Wally Wang' ],
     publisher: 'No Starch Pr',
@@ -299,7 +299,7 @@
     authors: [ 'Tom Weaver' ],
     publisher: 'McFarland',
     publishedDate: '2014-06-23',
-    description: "Perhaps no film genres attracted more rabid fans and less critical acclaim than the horror and science fiction movies of the 1950s and 1960s. The men and women who made the characters come to life are interviewed here, talking about their work, the behin',
+    description: "Perhaps no film genres attracted more rabid fans and less critical acclaim than the horror and science fiction movies of the 1950s and 1960s. The men and women who made the characters come to life are interviewed here, talking about their work, the behind",
     industryIdentifiers: [ [Object], [Object] ],
     pageCount: 396,
     printType: 'BOOK',
@@ -587,12 +587,8 @@
         id: 'UHHS17mfVb4C',
         link: 'http://books.google.com/books/about/Jewish_Sci_fi_Stories_for_Kids.html?hl=&id=UHHS17mfVb4C',
         thumbnail: 'http://books.google.com/books/content?id=UHHS17mfVb4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-        images: {} } ]
-    > var books = require('google-books-search');
-    undefined
-    > books.search('technology', function(error, results) { if ( ! error ) { console.log(results);} else { console.log(error);}});
-    undefined
-    > [ { title: 'Bodies in Technology',
+        images: {} },
+         { title: 'Bodies in Technology',
         authors: [ 'Don Ihde' ],
         publisher: 'U of Minnesota Press',
         publishedDate: '2002',
@@ -761,12 +757,8 @@
         id: 'OeLIH89YiMcC',
         link: 'http://books.google.com/books/about/Open_Innovation.html?hl=&id=OeLIH89YiMcC',
         thumbnail: 'http://books.google.com/books/content?id=OeLIH89YiMcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-        images: {} } ]
-    > var books = require('google-books-search');
-    undefined
-    > books.search('social justice', function(error, results) { if ( ! error ) { console.log(results);} else { console.log(error);}});
-    undefined
-    > [ { title: 'Why Social Justice Matters',
+        images: {} },
+    { title: 'Why Social Justice Matters',
         authors: [ 'Brian Barry' ],
         publisher: 'Polity',
         publishedDate: '2005-03-04',
@@ -931,3 +923,5 @@
         link: 'http://books.google.com/books/about/Social_Justice.html?hl=&id=MK-sWQWaI74C',
         thumbnail: 'http://books.google.com/books/content?id=MK-sWQWaI74C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
         images: {} } ]
+
+module.exports = { book_data }

@@ -9,6 +9,7 @@ const { Book } = require('./models/book')
 const books = require('google-books-search')
 const index = require('./routes/index')
 const users = require('./routes/users')
+const { addAllBookData } = require('./database/db.js')
 
 const app = express()
 
@@ -36,9 +37,16 @@ app.use('/users', users)
 
 //ROUTE to GET all books 
 app.get('/api/books', function (request, response) {
-  Book.find(function (err, books) {
-    response.json(books)
-  })
+  addAllBookData()
+    .then((books) =>{
+      response.json(books)
+    })
+    .catch((error) => {
+      response.json({message: 'error'})
+    })
+  // Book.find(function (err, books) {
+  //   response.json(books)
+  // })
 })
  
 
