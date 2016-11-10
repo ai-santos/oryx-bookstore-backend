@@ -4,13 +4,6 @@ const { Book } = require('../models/book')
 const { book_data } = require('../data.js')
 
 
-// const BookModel = db.model( 'Book', {
-//   title: { type: String },
-//   author: { type: String },
-//   img_url: { type:String }
-// })
-
-
 //get the specific data that matches the schema
 
 const dataMatchingSchema = book_data.map( bookData => {
@@ -31,30 +24,22 @@ const addAllBookData = () => {
 }
 
 
+//user can enter data into the form and on submit
 
-// const addToDB = (request,response,next) => {
-//   const { title, author, description, img_url } = request.body
-//   const theBook = new Book({ 
-//     title: title,
-//     author: author, 
-//     description: description,
-//     img_url: img_url 
-//   })
-//   theBook.save()
-//   console.log("TEST SUCCESS")
-//   // response.status( 200 ).json({ status: 'success', message: 'Added book.' })
-//   // next()
-  
-// }
 
-// const search_results = books.search('the', function(error, results) {
-//   if ( ! error ) {
-//     console.log("I'M RUNNING!")
-//     console.log(_.size(results))
-//     writeToFile( JSON.stringify(results) )
-//   } else {
-//     return error
-//   }
-// }) 
+//make a call into mongo to insert a new book
+const addOneBook = (request, response) => {
+  const { title, author1, author2, description, image_url } = request.body
+  // console.log('this is the request.body', request.body)
+  const theBook = new Book({ 
+    title: title,
+    authors: [author1, author2], 
+    description: description,
+    image_url: image_url 
+  })
+  return theBook.save()
+}
 
-module.exports = { addAllBookData }
+
+
+module.exports = { addAllBookData, addOneBook }
