@@ -40,7 +40,7 @@ app.get('/api/books', function (request, response) {
   getAllBooks()
     .then( (list) => {
       response.json(list)
-    })
+    })ga
 })
  
 app.get('/api/books/init'), function (request, response) {
