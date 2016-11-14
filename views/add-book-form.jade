@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h2 Add A Book
+  form( action='/api/books', method='post' )
+    div.form-group
+      label( for='text' ) Image_Url
+      input.form-control( type="text", name="image_url", placeholder="Image_Url" )
+    div.form-group
+      label( for='text' ) Title
+      input.form-control( type="text", name="title", placeholder="Title" )
+    div.form-group
+      label(for='description') Description
+      textarea.form-control( type="textarea", name="description", placeholder="Description", rows='3')
+    div.form-group
+      label( for='text' ) Author1
+      input.form-control( type="text", name="author1", placeholder="Author1" )
+    div.form-group
+      label( for='text' ) Author2
+      input.form-control( type="text", name="author2", placeholder="Author2" )
+    div.form-group
+    button.btn.btn-default( type="submit" ) Submit
+
